@@ -1,28 +1,44 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <h1 class="title">City Guide</h1>
+
+      <div class="select is-primary is-rounded is-hovered ">
+        <select v-model="ciutatSelected">
+          <option v-for="city in llistaCiutats" :key="city">{{ city }}</option>
+        </select>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
-export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+    export default {
+        name: 'app',
+        data () {
+            return {
+                ciutatSelected: "Barcelona",
+                llistaCiutats: [
+                    "Barcelona",
+                    "Madrid",
+                    "Berlin",
+                    "Paris",
+                    "Amsterdam"]
+            }
+        }
+    }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
+
+  h1 {
+    text-align: center;
+  }
 </style>
